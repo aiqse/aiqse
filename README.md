@@ -1,5 +1,7 @@
 # AI Quality-Driven Software Engineering (Draft)
 
+**English** | [日本語](README.ja.md)
+
 > **Status: Draft / Request for Comments.**
 > This is not a finished discipline. It is a proposal about how software engineering works when machines write the code. Issues and pull requests are welcome — we want to grow this with the community.
 
