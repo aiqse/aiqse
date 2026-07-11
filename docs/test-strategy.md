@@ -34,6 +34,14 @@ Traditional test-writing reads the implementation and asks "what should I cover?
 **2. The AI that wrote the code must not be the sole author of its verification.**
 When one generation pass produces both code and tests, the tests tend to encode the code's assumptions — including its bugs. Break the circularity with any of: human-authored expected results (the default), a separate generation pass given only the spec and quality model, or implementation-independent checks (golden master, replay, property-based tests).
 
+## Where this leaves TDD
+
+TDD contained one insight AIQSE keeps: **checks exist before the implementation.** The rest of it was cognitive scaffolding for a *human* implementer — red-green-refactor paced a person's thinking and gave the author fast feedback. TDD was always a design discipline wearing a testing name; its tests were the developer's own verification, never the QA gate.
+
+With a machine implementer, the scaffolding loses its purpose but the insight gets promoted. An agent that writes tests and runs them to confirm its own output is the craftsman checking his own work — legitimate *in-process* feedback for the generation loop, inadmissible as evidence. The exit gauge is the triangle-derived suite. Same file format, different artifact: what a check verifies is decided by **what it was derived from**, not by what framework runs it.
+
+The corollary is a filter for test value: **a test that must change whenever the implementation changes is part of the implementation.** Tests pinned to class structure die with each regeneration and therefore verify nothing across regenerations. Instruments attach to behavior boundaries — contracts, state transitions, invariants — which is exactly what lets them survive when the interior is regenerated. Surviving regeneration unchanged, and still passing, is the test of a test.
+
 ## Layers
 
 ### Unit tests
