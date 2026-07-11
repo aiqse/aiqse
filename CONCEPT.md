@@ -41,7 +41,7 @@ observability:      # logs, metrics, traces
 
 Behavior (the spec) tells you what the system does on the happy path. Quality tells you what it must do everywhere else — under attack, under load, under partial failure, under concurrency.
 
-The Quality Model is not a second design document. It is a **derived view**: the quality-relevant facts already scattered through the design (input constraints, business rules, performance notes, security requirements) re-projected along the quality dimensions — then **enriched with external norms** the design never states (RFC 5322, security baselines, the organization's latency budgets). Because it is largely derivable, AI should draft it and humans review it. Because it is enriched from outside the design, it remains an independent vertex rather than a restatement — a design error does not automatically propagate into what quality demands, and a dimension that *cannot* be filled from the design is a detected design gap. See [docs/quality-model.md](docs/quality-model.md).
+The Quality Model is not a second specification. It is a **derived view**: the quality-relevant facts already scattered through the specification, re-projected along these nine dimensions — then **enriched with external norms** the specification never states (RFC 5322, security baselines, latency budgets). Because it is largely derivable, AI should draft it and humans review it. Because it is enriched from outside — and because a dimension that *cannot* be filled is a detected specification gap — it remains an independent vertex, not a restatement. See [docs/quality-model.md](docs/quality-model.md).
 
 ### Verification — *what is proven*
 

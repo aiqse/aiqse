@@ -37,7 +37,7 @@ Turn the requirement into a precise behavioral contract: inputs, outputs, state 
 
 ### 3. Quality Model
 
-Walk the nine dimensions ([quality-model.md](quality-model.md)) and write verifiable criteria for each. This is the highest-leverage hour in the process — it is where correctness gets decided.
+Walk the nine dimensions ([quality-model.md](quality-model.md)) and write verifiable criteria for each. This is the highest-leverage hour in the process — it is where correctness gets decided. Much of it is derivation rather than invention: reorganizing constraints the specification already contains and enriching them with external norms — which is why AI should draft it and a human should judge it (see [quality-model.md](quality-model.md#where-a-quality-model-comes-from)).
 
 ### 4. Expected Results
 

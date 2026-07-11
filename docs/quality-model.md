@@ -108,34 +108,42 @@ quality_model:
 
 ## Where a Quality Model comes from
 
-The Quality Model is not a design document, and it is not written from scratch.
+The Quality Model is not a second specification, and it is not written from scratch.
 
-A design document describes **structure** — how the system is built: endpoints, payloads, tables, flows. A Quality Model describes **assurance** — what must hold. Yet most of what a Quality Model contains is already present in the design, scattered across it: an input constraint here, a business rule there, a performance note in an appendix, security requirements in a separate section. The Quality Model reorganizes those facts along the nine dimensions.
+A specification describes **behavior** — inputs, outputs, state changes, edge cases. A Quality Model describes **assurance** — what must hold while that behavior is delivered. Yet most of what a Quality Model contains is already present in the specification (and, in organizations that keep them, the surrounding design documents), scattered: an input constraint here, a business rule there, a performance note in an appendix, security requirements in a separate document. The Quality Model reorganizes those facts along the nine dimensions.
 
-In database terms, it is a **view**: designs are written per-feature, per-screen, per-API; the Quality Model cuts across them and re-projects the same facts along the quality axis. It adds no structure of its own — it normalizes what the design already commits to, into a form verification can consume.
+In database terms, it is a **view**. Specifications are written per-feature, per-screen, per-API; the Quality Model cuts across them and re-projects the same facts along the quality axis, into the one form verification can consume.
 
 But it is not a *pure* projection. Two other kinds of information enter during derivation:
 
-1. **External norms.** The design says "email"; the Quality Model says "RFC 5322 valid." That constraint comes from standards, security baselines, and organizational budgets — from outside the design. This is the same relationship aircraft safety requirements have to an aircraft's design: "must stop with one brake failed" is not derived from the brake drawings.
-2. **Absence made explicit.** Every dimension must be specified or marked `not-applicable` with a reason. When derivation cannot fill a dimension — no performance budget exists anywhere in the design — that is not a gap in the Quality Model. It is a **detected gap in the design**. Deriving the Quality Model doubles as a design audit.
+1. **External norms.** The specification says "email"; the Quality Model says "RFC 5322 valid." That constraint comes from standards, security baselines, and organizational budgets — from outside the specification. This is the relationship aircraft safety requirements have to the aircraft's design: "must stop with one brake failed" is not derived from the brake drawings.
+2. **Absence made explicit.** Every dimension must be specified or marked `not-applicable` with a reason — so when derivation cannot fill a dimension, because no performance budget exists anywhere, that is not a gap in the Quality Model. It is a **detected gap in the specification**. Deriving the Quality Model doubles as a specification audit.
 
-So: *Quality Model = projection of the design + enrichment from external norms, with design gaps surfaced.*
+So: *Quality Model = projection of the specification + enrichment from external norms, with specification gaps surfaced.*
+
+### Doesn't derivation collapse the triangle?
+
+If the Quality Model derives from the specification, and the implementation is generated from both, hasn't the triangle folded back into the line that [philosophy.md](philosophy.md) rejects? No — because the quality vertex's independence never came from being written by a different hand. It comes from three things derivation preserves:
+
+- **Outside information.** The external norms are precisely what the specification does not contain. A specification error cannot rewrite RFC 5322 or the organization's latency budget.
+- **Forced completeness.** The nine-dimension walk interrogates the specification from angles it was never written in. A specification can be silent about concurrency; a Quality Model cannot.
+- **A reviewed gate.** A human judges the two non-mechanical parts of the derivation: whether the right norms were applied, and whether the surfaced gaps are real.
+
+The gauge is not made by the part — and not made *only* from the part's drawing, either.
 
 ### Who writes it
 
-The projection step is mechanical enough that AI should perform it — humans should not be transcribing constraints that already exist in the design. The flow is:
+The projection step is mechanical enough that AI should perform it. Humans transcribing constraints that already exist in the specification is exactly the kind of work that belongs to the machine:
 
 ```text
-design document → AI derives quality model → human reviews → quality model
+specification → AI derives quality model → human review → quality model
 ```
 
-Human review is not a courtesy pass. It is where the two non-mechanical parts get judged: whether the right external norms were applied, and whether the surfaced gaps are real. (In [autonomy-levels.md](autonomy-levels.md) terms, this runs the Quality Model vertex at Level 3 — AI drafts, human approves.)
-
-Derivation also has an independence consequence. The implementation is generated from the same design the Quality Model is derived from — so a design error would propagate into both, and a naively derived view could never catch what its source lacks. The external norms and the human review are precisely what keeps the quality vertex **independent** rather than a restatement: the gauge is not made by the part, and not made *only* from the part's drawing either.
+The Level 2 role table in [development-process.md](development-process.md) already anticipates this ("AI may draft, human decides"). Making derivation the default moves this vertex toward Level 3 of [autonomy-levels.md](autonomy-levels.md) — AI drafts, human approves — and the review is not a courtesy pass: it is where the norms and the gaps get judged.
 
 ### Model vs. instance
 
-Strictly speaking, "Quality Model" names the nine-dimension schema above — the fixed frame, analogous to ISO 25010. Each feature's YAML is an **instance** of it: a quality view of that feature's design. This repository uses "Quality Model" for both where context makes it unambiguous.
+Strictly speaking, "Quality Model" names the nine-dimension schema above — the fixed frame, analogous to ISO 25010. Each feature's YAML is an **instance** of it: a quality view over that feature's specification. This repository uses "Quality Model" for both where context makes it unambiguous.
 
 ## Why this matters
 
