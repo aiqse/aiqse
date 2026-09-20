@@ -58,6 +58,8 @@ Code is not a vertex. It is what gets produced *inside* the triangle — and the
 
 Nothing about the triangle says *who* produces each vertex. Today a human typically writes the spec and quality model while AI fills the interior — that is Level 2 of six. Every vertex can progressively be produced by AI, with humans moving from authors, to approvers, to auditors of the system itself. The triangle does not change; only the agents do. See [docs/autonomy-levels.md](docs/autonomy-levels.md).
 
+At Levels 4–5 this loop runs with no human in it by default: retries, routing failures back to the right vertex, verdicting, and auditing the verification system itself all need explicit control rules, or "autonomous" just means "unattended and unaccountable." Those rules are specified in [docs/autonomous-loop.md](docs/autonomous-loop.md).
+
 This is the difference between a methodology about *how humans should use AI* and an engineering discipline that survives full automation.
 
 ## The flow

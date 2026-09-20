@@ -21,7 +21,7 @@ Implementation         ── fill the interior (generated)
 Evidence               ── prove the triangle closed
 ```
 
-The loop is iterative — a failing evidence check sends you back to the Quality Model or Specification, not into the generated code.
+The loop is iterative — a failing evidence check sends you back to the Quality Model or Specification, not into the generated code. When this loop runs unattended (Level 4–5), that routing decision, the retry budget, and the verdict step itself are governed by explicit rules, not left to the generator's judgment — see [autonomous-loop.md](autonomous-loop.md).
 
 > **A note on "who":** every step below is agent-agnostic. This document describes **Level 2** (human-built triangle, AI-filled interior) — the level most teams practice today. At higher levels, AI drafts or owns more steps; the steps themselves do not change. See [autonomy-levels.md](autonomy-levels.md).
 

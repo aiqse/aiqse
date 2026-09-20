@@ -95,6 +95,7 @@ SDD は線です: 仕様 → 実装。線が問えるのは「仕様どおりに
 | [docs/philosophy.md](docs/philosophy.md) | なぜパイプラインは三角形になったのか |
 | [docs/industrial-lessons.md](docs/industrial-lessons.md) | 製造業の品質100年が AI 時代のソフトウェアに教えること |
 | [docs/autonomy-levels.md](docs/autonomy-levels.md) | レベル 0–5: 自律エンジニアリングへの道 |
+| [docs/autonomous-loop.md](docs/autonomous-loop.md) | レベル 4–5 を成立させる制御ループ — 収束制御・検証系の自己強化・verdict自動化・エージェント実行制御 |
 | [docs/quality-model.md](docs/quality-model.md) | 品質の9次元 (Quality Model) |
 | [docs/development-process.md](docs/development-process.md) | 三角形を閉じる — 手順 |
 | [docs/test-strategy.md](docs/test-strategy.md) | 「テストを書く」から「品質を証明する」へ |
