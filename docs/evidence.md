@@ -54,7 +54,7 @@ date: 2026-07-09
 
 **Preserved.** Evidence records are versioned alongside releases. When an incident occurs, the first question is answerable in minutes: *what did we prove about this behavior, and when?*
 
-**Human-verdicted.** Automation produces evidence; a human issues the verdict. The sign-off is no longer "I read the code" — it is "I read the proof."
+**Human-verdicted.** Automation produces evidence; a human issues the verdict. The sign-off is no longer "I read the code" — it is "I read the proof." This is the Level 2 default. At Level 4–5 the verdict itself may be automated under a narrow, explicit gate — see [autonomous-loop.md §3](autonomous-loop.md#3-verdict-automation--when-release-requires-zero-human-checkpoints) for the conditions that must hold before a machine, rather than a human, is permitted to write `verdict: accepted`.
 
 ## Why evidence, not review
 

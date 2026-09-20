@@ -93,6 +93,7 @@ See [PRINCIPLES.md](PRINCIPLES.md).
 | [docs/philosophy.md](docs/philosophy.md) | Why the pipeline became a triangle |
 | [docs/industrial-lessons.md](docs/industrial-lessons.md) | What a century of manufacturing quality teaches AI-era software |
 | [docs/autonomy-levels.md](docs/autonomy-levels.md) | Levels 0–5: the path to autonomous engineering |
+| [docs/autonomous-loop.md](docs/autonomous-loop.md) | The control loop that makes Level 4–5 possible: convergence, self-strengthening verification, verdict automation, agentic execution |
 | [docs/quality-model.md](docs/quality-model.md) | The nine quality dimensions |
 | [docs/development-process.md](docs/development-process.md) | Closing the triangle, step by step |
 | [docs/test-strategy.md](docs/test-strategy.md) | From "writing tests" to "proving quality" |

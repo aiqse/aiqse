@@ -36,9 +36,9 @@ AI drafts all three vertices — specification and quality model from requiremen
 
 ### Level 4 — Bounded autonomy
 
-Within declared domains — a service, a change class, a risk tier — AI owns the full triangle and ships on automated gates. This is the lights-out factory for routine engineering: unattended, self-halting (jidoka), mistake-proofed (poka-yoke). Humans set the standards the gates enforce, audit samples and every exception, and decide which domains qualify.
+Within declared domains — a service, a change class, a risk tier — AI owns the full triangle and ships on automated gates. This is the lights-out factory for routine engineering: unattended, self-halting (jidoka), mistake-proofed (poka-yoke). Humans set the standards the gates enforce, audit samples and every exception, and decide which domains qualify. The gate conditions, the retry/convergence rules that feed it, and the mandatory audit sampling are specified concretely in [autonomous-loop.md](autonomous-loop.md) — this table names the destination; that document is the mechanism.
 
-*To advance:* process-level statistics (escape rate, replay diff rate, incident rate) stable across domains and durations, plus a verification system that itself improves without human prompting.
+*To advance:* process-level statistics (escape rate, replay diff rate, incident rate) stable across domains and durations, plus a verification system that itself improves without human prompting — the meta-loop in [autonomous-loop.md §2](autonomous-loop.md#2-the-meta-loop--verification-that-audits-and-strengthens-itself).
 
 ### Level 5 — Autonomous engineering
 
